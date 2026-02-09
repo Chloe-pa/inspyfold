@@ -11,7 +11,7 @@
 <div class="app-shell">
     <header class="header">
       <div onclick="location.reload()">
-        <img src="logo_l.png" id="mainLogo" class="logo-img" alt="Inspyfold" />
+        <img src="/logo_l.png" id="mainLogo" class="logo-img" alt="Inspyfold" />
       </div>
       <div class="header-btns">
         <button class="btn-ghost" onclick="handleLockToggle()" id="lockBtn" title="잠금">🔓</button>
@@ -130,7 +130,7 @@
     </div>
   </div>
 
-  <script>
+  <script type="module">
     const DEFAULT_PRIMARY = '#d4a5a5';
 
     const now = new Date();
@@ -1040,7 +1040,7 @@
 
       document.body.classList.toggle('dark-mode', nextDark);
       document.getElementById('themeBtn').innerText = nextDark ? '☀️' : '🌙';
-      document.getElementById('mainLogo').src = nextDark ? 'logo_d.png' : 'logo_l.png';
+      document.getElementById('mainLogo').src = base + (nextDark ? 'logo_d.png' : 'logo_l.png');
 
       if(fromUser) localStorage.setItem('inspy_theme', nextDark ? 'dark' : 'light');
       toast(nextDark ? '다크 모드' : '라이트 모드');
